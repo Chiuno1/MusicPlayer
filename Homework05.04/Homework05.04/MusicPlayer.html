@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    
+    <style>
+
+        #ControlPanel {
+            border: 3px solid;
+            width: 700px;
+            height: 400px;
+            margin: auto;
+            text-align: center;
+        }
+
+        #ControlPanel>span{
+            border:2px solid;
+            padding:3px;
+            box-shadow:2px 2px 3px black;
+            cursor:pointer;
+            font-family:Webdings;
+            font-size:2rem;
+        }
+
+    </style>
+
+</head>
+<body>
+   
+    <div id="ControlPanel">
+        <span onclick="Play()" id="btnPlay" title="播放紐">4</span>
+        <span onclick="Stop()"><</span>
+        <!--<span onclick="Pause()">;</span>-->
+        <span onclick="changTime(-5)">7</span>
+        <span onclick="changTime(+5)">8</span>
+        <hr/>
+        <input id="volValue" type="range" max="100" min="0" value="100" onchange="setVolume()" /> <!--oninput隨時改變-->
+        <input id="Button1" type="button" value="-" onclick="changeVolume(-0.05)" />
+        <input id="Button2" type="button" value="+" onclick="changeVolume(0.05)" />
+        <hr/>
+        <div id="info">
+            <marquee>請按撥放紐</marquee>
+        </div>
+    </div>
+
+    <audio id="music" controls="controls">
+        <source src="music/elysees.mp3" type="audio/mpeg" title="Champs-Elyees" />
+    </audio>
+
+    <script>
+
+        var audio = document.getElementById("music"); /*設id*/
+        var btnPlay = document.getElementById("btnPlay");
+        var volValue = document.getElementById("volValue");
+        var info = document.getElementById("info");
+
+        console.log(info.children[0].title);
+
+        //撥放&暫停
+        function Play() {
+            if (audio.paused) {
+                audio.play();
+                btnPlay.innerText = ";";
+                info.children[0].innerText = "現在播放:" + audio.children[0].title;
+            }
+            else {
+                audio.pause();
+                btnPlay.innerText = "4";
+                info.children[0].innerText = "音樂暫停中";
+            }
+
+        }
+
+        //function Pause() {
+        //    audio.pause();
+        //}
+
+        //停止撥放
+        function Stop() {
+            audio.pause();
+            audio.currentTime = 0; //指定至第0秒
+            btnPlay.innerText = "4";
+            info.children[0].innerText = "已停止撥放";
+        }
+
+        //快轉&倒轉
+        function changTime(t) {
+            audio.currentTime += t;
+        }
+
+        //音量微調
+        function changeVolume(v) {
+            //audio.volume += v;
+            volValue.value = parseInt(volValue.value) + v;
+            setVolume();
+        }
+
+        //音量調整
+        function setVolume() {
+            audio.volume = volValue.value / 100;
+
+        }
+
+    </script>
+
+</body>
+</html>

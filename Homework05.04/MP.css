@@ -1,0 +1,161 @@
+﻿
+@font-face {
+    font-family: 'webdings';
+    src: url('fonts/webdings.eot') format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'webdings';
+    src: url('fonts/webdings.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'webdings';
+    src: url('fonts/webdings.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'webdings';
+    src: url('fonts/webdings.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'webdings';
+    src: url('fonts/webdings.woff2') format('woff2');
+}
+
+body {
+    background-image: url('image/camp-night-vk.jpg');
+    background-size: cover;
+}
+
+#ControlPanel { /*控制面板*/
+    border: 3px solid;
+    width: 700px;
+    height: 320px;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+    background-image: url('gif/07f6f1a1183615fb6eea8c75500c61da.gif');
+    background-size: cover;
+}
+
+#ControlPanel > div > span {
+    border: 2px solid;
+    padding: 3px;
+    box-shadow: 2px 2px 3px black;
+    cursor: pointer;
+    font-family: Webdings;
+    font-size: 2rem;
+    border-radius: 50%; 
+}
+
+#song, #info {
+    width: inherit;
+    font-size: 2rem;
+    background-color: #7e0b78;
+    color: antiquewhite;
+    text-align: center;
+    opacity:0.5;
+}
+
+.btnVol {
+    border-radius: 50%;
+    border: 1px groove white;
+    box-shadow: 0px 0px 1px gray;
+}
+
+#volValue {
+    width: 80%;
+    height: 8px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 3px solid #808080;
+    background-color: #c8c8c8;
+    outline: none;
+}
+
+    #volValue::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 35px;
+        height: 25px;
+        background-color: #4a4848;
+        border: 3px groove white;
+    }
+
+    #volValue::-moz-range-thumb {
+        -moz-appearance: none;
+        width: 35px;
+        height: 25px;
+        background-color: #4a4848;
+        border: 3px groove white;
+    }
+
+#volInfo {
+    width: 30px;
+    text-align: center;
+    background-color: black;
+    color: #17d57e;
+}
+
+#progress {
+    width: inherit;
+    height: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin-bottom: 10px;
+    background-color: #c8c8c8;
+    outline: none;
+}
+
+    #progress::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 10px;
+        height: 5px;
+        background-color: #c20202;
+        cursor: pointer;
+        transition: .5s;
+    }
+
+        #progress::-webkit-slider-thumb:hover {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+#book > div {
+    border: 1px groove;
+    width: 348px;
+    height: 200px;
+    float: left;
+    background-color: #a91b8c;
+    overflow:auto;
+}
+
+    #book > div > div {
+        border: 1px groove;
+        background-color: #eebb60;
+        padding:4px;
+        margin:2px;
+    }
+
+#book > button {
+    clear: both;
+    width: 100%;
+    background-color: #7e0b78;
+    font-size: 16px;
+    text-align: center;
+    border: 3px groove white;
+    color: antiquewhite;
+    font-weight: 900;
+}
+
+.hide {
+    display: none;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+    padding:10px;
+}

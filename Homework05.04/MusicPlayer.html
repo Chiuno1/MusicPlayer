@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <link href="MP.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div id="ControlPanel">
+        <select id="song">
+        </select>
+
+        <div class="flex">
+            <span onclick="Play()" id="btnPlay" title="播放鈕">4</span>
+            <span onclick="Stop()"><</span>
+            <span onclick="changeSong(-1)">9</span>
+            <span onclick="changeTime(-5)">7</span>
+            <span onclick="changeTime(5)">8</span>
+            <span onclick="changeSong(1)">:</span>
+            <span onclick="setMuted()">V</span>
+            <span onclick="setLoop()">q</span>
+            <span onclick="setRandom()">s</span>
+            <span onclick="setAllLoop()">`</span>
+            <span onclick="songBook()">@</span>
+        </div>
+        <input id="progress" type="range" value="0" oninput="setTimeBar()" />
+        <input id="volValue" type="range" max="100" min="0" value="100" onchange="setVolume()" /> <!--oninput隨時改變-->
+        <input id="Button1" class="btnVol" type="button" value="-" onclick="changeVolume(-1)" />
+        <input id="Button2" class="btnVol" type="button" value="+" onclick="changeVolume(1)" />
+        <input id="volInfo" type="text" readonly />
+        <hr />
+        <div id="info">
+            <marquee>請按撥放鈕</marquee>
+            <div>00:00 / 00:00</div>
+            <div>　</div> <!--全形空白才能顯示div，在半形無法-->
+        </div>
+        <div id="book" class="hide">
+            <div ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div title="music/CarelessWhisper.mp3">George Michael - Careless Whisper</div>
+                <div title="music/IveSeenitAll.mp3">While She Sleeps - I'VE SEEN IT ALL</div>
+                <div title="music/FlushingtheStairs.mp3">Leavv - Flushing the Stairs</div>
+                <div title="music/ISever.mp3">SYLOSIS - I Sever</div>
+                <div title="music/WayBackHome.mp3">SHAUN feat. Conor Maynard - Way Back Home</div>
+                <div title="music/AnotherLife.mp3">Motionless In White - Another Life</div>
+                <div title="music/DeepBlue.mp3">William Black - Deep Blue ft. Monika Santucci</div>
+            </div>
+
+            <div ondrop="drop(event)" ondragover="allowDrop(event)"> <!--(事件處理)-->
+
+            </div>
+
+            <button onclick="UpdateMusic()">更新歌單</button>
+
+        </div>
+    </div>
+
+    <audio id="music">
+        <source type="audio/mpeg" />
+    </audio>
+
+    <script src="MP.js"></script>
+
+</body>
+</html>
