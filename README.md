@@ -9,3 +9,14 @@
 ### 具有資訊看版可顯示目前播放狀態及目前播放曲目的功能。
 ### 具有播放進度條，並可由進度條調整曲目快轉或倒轉的功能。
 ### 具有我的歌本功能，可供編輯想聽的歌曲。
+
+## 執行畫面範例
+
+### 撥放
+![image](https://user-images.githubusercontent.com/113997297/195353509-99a1c1c1-fd5c-466c-9a2a-656ec296ce9d.png)
+
+### 全部循環&顯示曲目
+![image](https://user-images.githubusercontent.com/113997297/195353543-fce9445d-96bf-4873-9a11-559a1cfc9de3.png)
+
+### 全部循環&可選歌曲之歌本功能
+![image](https://user-images.githubusercontent.com/113997297/195353569-e9b05006-7058-4d4d-b153-9244ce46cc84.png)
